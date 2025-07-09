@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About the Company</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #1f1f1f;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background-color: #fff;
+            flex-wrap: nowrap;
+            gap: 2rem;
+        }
+
+        .left-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: bold;
+            color: #1f1f1f;
+            font-size: 1rem;
+        }
+
+        .logo-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, #7f56d9, #5a3eff);
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #344054;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .right-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .login-link {
+            color: #344054;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .sign-up {
+            background-color: #7f56d9;
+            color: #fff;
+            border: none;
+            padding: 0.45rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 2.2rem;
+            left: 0;
+            background-color: #fff;
+            min-width: 160px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+       
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .right-nav {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .navbar {
+                justify-content: space-between;
+            }
+        }
+
+        
+        .intro {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+        }
+
+        .intro .tag {
+            color: #5a3eff;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro .description {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .stats-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            gap: 2rem;
+        }
+
+        .stats-image {
+            flex: 1 1 350px;
+            max-width: 500px;
+        }
+
+        .stats-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .stats-text {
+            flex: 1 1 300px;
+            max-width: 500px;
+        }
+
+        .stats-text h4 {
+            color: #5a3eff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stats-text h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem 2rem;
+        }
+
+        .stats-grid div {
+            color: #5a3eff;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .stats-grid p {
+            color: #333;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .mobile-only {
+            display: none;
+            font-size: 0.95rem;
+            color: #555;
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .stats-section {
+                flex-direction: column-reverse;
+                padding: 2rem 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                
+            }
+
+            .stats-text h3 {
+                font-size: 1.3rem;
+            }
+
+            .mobile-only {
+                display: block;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="left-nav">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <span>Untitled UI</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="#">Home</a>
+                    <div class="dropdown">
+                        <a href="#">Products ▾</a>
+                        <div class="dropdown-content">
+                            <a href="#">Product 1</a>
+                            <a href="#">Product 2</a>
+                            <a href="#">Product 3</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="#">Resources ▾</a>
+                        <div class="dropdown-content">
+                            <a href="#">Blog</a>
+                            <a href="#">Guides</a>
+                            <a href="#">Help Center</a>
+                        </div>
+                    </div>
+                    <a href="#">Pricing</a>
+                </nav>
+            </div>
+
+            <div class="right-nav">
+                <a href="#" class="login-link">Log in</a>
+                <button class="sign-up">Sign up</button>
+            </div>
+
+            <div class="mobile-menu">&#9776;</div>
+        </div>
+    </header>
+
+    <section class="intro">
+        <p class="tag">About us</p>
+        <h2>About the company</h2>
+        <p class="description">Learn more about the company and the team behind it.</p>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-image">
+            <img src="1.png" alt="Office Image" />
+        </div>
+        <div class="stats-text">
+            <h4>We’ve helped hundreds of companies</h4>
+            <h3>We’re only just getting started on our journey</h3>
+            <p class="mobile-only">
+                Everything you need to build modern UI and great products. We've done all the heavy lifting so you don't
+                have
+                to — the perfect starting point for any project.
+            </p>
+
+            <div class="stats-grid">
+                <div>
+                    400+<br />
+                    <p>Projects completed</p>
+                </div>
+                <div>
+                    600%<br />
+                    <p>Return on investment</p>
+                </div>
+                <div>
+                    10k<br />
+                    <p>Global downloads</p>
+                </div>
+                <div>
+                    200+<br />
+                    <p>5-star reviews</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
